@@ -1,0 +1,11 @@
+.formBlock {
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+body {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 80%;
+    margin: auto;
+}
