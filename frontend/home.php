@@ -20,6 +20,8 @@ if (!isset($_SESSION["username"])){
 
 <body onload="getXMLData()">
      <h1 class="display-4">Benvenuto <?php echo $_SESSION["username"]; ?>!</h1>
+    <a href="../backend/logout.php">[Esci]</a>
+
     <div class="input-group mb-3">
         <span class="input-group-text">€</span>
         <span class="input-group-text"><input type="number" class="form-control" placeholder="Ammontare" id="ammontare"></span>

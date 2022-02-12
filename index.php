@@ -19,17 +19,17 @@ if (isset($_SESSION["username"])) {
 
 <body>
     <h1 class="display-4">Registrati</h1>
-    <form method="POST" action="./backend/signup.php" class="row g-3 needs-validation formBlock">
+    <form method="POST" action="./backend/signup.php" class="row g-3 formBlock">
         <div>
             <label for="validationCustom01" class="form-label">Nome</label>
-            <input type="text" class="form-control" id="validationCustom01" value="" required>
+            <input type="text" class="form-control" id="validationCustom01" name="nome" value="" required>
             <div class="valid-feedback">
                 Looks good!
             </div>
         </div>
         <div>
             <label for="validationCustom02" class="form-label">Cognome</label>
-            <input type="text" class="form-control" id="validationCustom02" value="" required>
+            <input type="text" class="form-control" id="validationCustom02" name="cognome" value="" required>
             <div class="valid-feedback">
                 Looks good!
             </div>
@@ -38,7 +38,7 @@ if (isset($_SESSION["username"])) {
             <label for="validationCustomUsername" class="form-label">Nomeutente</label>
             <div class="input-group has-validation">
                 <span class="input-group-text" id="inputGroupPrepend">@</span>
-                <input type="text" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
+                <input type="text" class="form-control" id="validationCustomUsername" name="username" aria-describedby="inputGroupPrepend" required>
                 <div class="invalid-feedback">
                     Please choose a username.
                 </div>
@@ -46,14 +46,14 @@ if (isset($_SESSION["username"])) {
         </div>
         <div>
             <label for="validationCustom03" class="form-label">Email</label>
-            <input type="email" class="form-control" id="validationCustom03" required>
+            <input type="email" class="form-control" name="email" id="validationCustom03" required>
             <div class="invalid-feedback">
                 Please provide a valid city.
             </div>
         </div>
         <div>
             <label for="validationCustom04" class="form-label">Password</label>
-            <input type="password" class="form-control" id="validationCustom03" required>
+            <input type="password" class="form-control" name="psw" id="validationCustom03" required>
             <div class="invalid-feedback">
                 Please select a valid state.
             </div>
@@ -65,12 +65,12 @@ if (isset($_SESSION["username"])) {
     <hr />
 
     <h1 class="display-4">Accedi</h1>
-    <form method="POST" action="./backend/login.php" class="row g-3 needs-validation formBlock">
+    <form method="POST" action="./backend/login.php" class="row g-3 formBlock">
         <div>
             <label for="validationCustomUsername" class="form-label">Nomeutente</label>
             <div class="input-group has-validation">
                 <span class="input-group-text" id="inputGroupPrepend">@</span>
-                <input type="text" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
+                <input type="text" class="form-control" id="validationCustomUsername" name="username" aria-describedby="inputGroupPrepend" required>
                 <div class="invalid-feedback">
                     Please choose a username.
                 </div>
@@ -78,14 +78,14 @@ if (isset($_SESSION["username"])) {
         </div>
         <div>
             <label for="validationCustom03" class="form-label">Email</label>
-            <input type="email" class="form-control" id="validationCustom03" required>
+            <input type="email" class="form-control" name="email" id="validationCustom03" required>
             <div class="invalid-feedback">
                 Please provide a valid city.
             </div>
         </div>
         <div>
             <label for="validationCustom04" class="form-label">Password</label>
-            <input type="password" class="form-control" id="validationCustom03" required>
+            <input type="password" class="form-control" name="psw" id="validationCustom03" required>
             <div class="invalid-feedback">
                 Please select a valid state.
             </div>
