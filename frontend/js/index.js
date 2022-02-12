@@ -10,62 +10,32 @@ function setTipo(btn) {
 
 // crea un elemento XML con i valori inseriti nelle inputbox e lo aggiunge alla xml response
 function invia() {
-    let xmlElement = document.createElement("spesa");
+    let descrizione = document.getElementById("descrizione").value;
+    let data = document.getElementById("data").value;
+    let ammontare;
 
-    let nome = document.createElement("nominativo");
-    nome.innerText = document.getElementById("nominativo").value;
-    
-    let data = document.createElement("data");
-    data.innerText = document.getElementById("data").value;
-
-    let tipologia = document.createElement("tipo");
-    if (tipo == null){
+    if (tipo == null) {
         alert("Selezionare una tipologia");
         return;
     }
-    tipologia.innerText = tipo;
 
     // se la tipologia di transazione è bonifico è positivo se è una spesa allora è negativo
-    let ammontare = document.createElement("ammontare");
     if (tipo == "Bonifico") {
-        ammontare.innerText = "+" +  document.getElementById("ammontare").value;
-    }
-    else {
-        ammontare.innerText = "-" +  document.getElementById("ammontare").value;
+        ammontare = 1 * document.getElementById("ammontare").value;
+    } else {
+        ammontare = -1 * document.getElementById("ammontare").value;
     }
 
-    xmlElement.appendChild(nome);
-    xmlElement.appendChild(data);
-    xmlElement.appendChild(ammontare);
-    xmlElement.appendChild(tipologia);
-
-    res.getElementsByTagName("conto")[0].appendChild(xmlElement);
+    req.open("POST", "/ProgettoVacanza/backend/bankHandler.php", true);
+    req.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    req.onreadystatechange = function() {
+        if (this.readyState === 4 && this.status === 200) {
+            console.log(this.responseText); // echo from php
+        }
+    };
+    req.send(`descrizione=${descrizione}&data=${data}&ammontare=${ammontare}&tipo=${tipo}`);
 }
 
 // richiede il file xml e mostra i dati nella pagina HTML
 function getXMLData() {
-    let tableBody = document.getElementById("tableBody");
-    let tableRow, tableChild, conto;
-
-    req.onreadystatechange = function () {
-        if (req.status == 200 && req.readyState == 4) {
-            res = req.responseXML;
-            conto = res.getElementsByTagName("spesa");
-
-            for (let i = 0; i < conto.length; i++) {
-                tableRow = document.createElement("tr");
-
-                for (let j = 0; j < ids.length; j++) {
-                    tableChild = document.createElement("td");
-                    tableChild.innerText = conto[i].getElementsByTagName(ids[j])[0].textContent;
-
-                    tableRow.appendChild(tableChild);
-                    tableBody.appendChild(tableRow);
-                }
-            }
-        }
-    }
-
-    req.open("get", "./assets/file/data.xml", true);
-    req.send();
 }

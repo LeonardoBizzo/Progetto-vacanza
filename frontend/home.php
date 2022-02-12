@@ -14,7 +14,7 @@ if (!isset($_SESSION["username"])){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/index.css">
     <title>Document</title>
 </head>
 
@@ -38,7 +38,7 @@ if (!isset($_SESSION["username"])){
             <li class="dropdown-item" onclick="setTipo(this)">Bonifico</li>
         </ul>
 
-        <input type="text" aria-label="First name" class="form-control" id="nominativo" placeholder="Nominativo">
+        <input type="text" aria-label="First name" class="form-control" id="descrizione" placeholder="Descrizione">
         <input type="date" aria-label="Last name" class="form-control" id="data">
 
         <button type="button" class="btn btn-primary" onclick="invia()">Invia</button>
@@ -49,6 +49,7 @@ if (!isset($_SESSION["username"])){
             <thead>
                 <tr class="table-primary">
                     <th scope="col">Nominativo</th>
+                    <th scope="col">Descrizione</th>
                     <th scope="col">Data</th>
                     <th scope="col">Ammontare</th>
                     <th scope="col">Tipo</th>
