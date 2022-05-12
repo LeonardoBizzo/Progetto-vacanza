@@ -1,1 +1,14 @@
 #+TITLE: Una vacanza tra amici
+
+Stiamo organizzando una vacanza tra amici e per poter controllare tutte le spese abbiamo deciso di realizzare un'architettura web che tenga conto di chi aggiunge fondi e come vengono utilizzati nelle diverse categorie.
+Prima di tutto è stato realizzato un database con 2 tabelle:
+[[./media/accountDb.png]]
+
+Nella prima tabella vengono inseriti i dati della registrazione di un utente al sito web attraverso il form specifico. Una volta avvenuta la registrazione si viene reindirizzati all’homepage. Se un utente è già registrato potrà direttamente loggarsi per raggiungere l’homepage.
+[[./media/umlUtente.png]]
+
+Dopo aver fatto l’accesso sarà possibile accedere al sito in cui ogni persona può aggiungere fondi specificando l’ammontare, la data del bonifico e una descrizione; questi valori verranno inseriti nella seconda tabella e presentati a schermo per tenere conto di tutti i fondi inseriti e delle spese effettuate.
+[[./media/contoDb.png]]
+
+Cosi come per l’aggiunta dei fondi sarà possibile inserire una spesa specificando il tipo e l’ammontare; questa cifra verrà sottratta dalla somma dei fondi aggiunti tramite bonifico e restante in quel momento.
+[[./media/umlFinale.png]]
