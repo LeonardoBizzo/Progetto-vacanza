@@ -14,5 +14,5 @@ if ($sql->affected_rows == 1) {
 }
 
 $sql->close();
-header("Location:/ProgettoVacanza/index.php");
+header("Location:../index.php");
 ?>

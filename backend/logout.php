@@ -4,5 +4,5 @@ session_start();
 unset($_SESSION);
 session_destroy();
 
-header("Location:/ProgettoVacanza/index.php");
+header("Location:../index.php");
 ?>

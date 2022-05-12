@@ -2,7 +2,7 @@
 session_start();
 
 if (!isset($_SESSION["username"])) {
-    header("Location:/ProgettoVacanza/index.php");
+    header("Location:/vacanza/index.php");
 }
 ?>
 <!DOCTYPE html>
@@ -19,7 +19,7 @@ if (!isset($_SESSION["username"])) {
 
 <body>
     <h1 class="display-4">Benvenuto <?php echo $_SESSION["username"]; ?>!</h1>
-    <a href="../backend/logout.php">[Esci]</a>
+    <a href="/vacanza/backend/logout.php">[Esci]</a>
 
     <div class="input-group mb-3">
         <span class="input-group-text">€</span>

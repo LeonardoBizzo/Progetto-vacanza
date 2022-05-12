@@ -23,7 +23,7 @@ function invia() {
         ammontare = -1 * document.getElementById("ammontare").value;
     }
 
-    req.open("POST", "/ProgettoVacanza/backend/bankHandler.php", true);
+    req.open("POST", "/vacanza/backend/bankHandler.php", true);
     req.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     req.onreadystatechange = function() {
         if (this.readyState === 4 && this.status === 200) {
